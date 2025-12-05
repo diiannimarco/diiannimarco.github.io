@@ -1,1 +1,448 @@
-x
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articoli Scientifici - Marco Di Ianni</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1>Marco Di Ianni</h1>
+                <p class="subtitle">Fisico Computazionale</p>
+            </div>
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="chi-sono.html">Chi Sono</a></li>
+                    <li><a href="studi.html">Studi</a></li>
+                    <li><a href="insegnamento.html">Insegnamento</a></li>
+                    <li><a href="visualizzazioni.html">Simulazioni</a></li>
+                    <li><a href="articoli.html" class="active">Articoli</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="articles-page">
+            <header class="page-header">
+                <h1>Articoli Scientifici</h1>
+                <p class="page-subtitle">Approfondimenti teorici e applicazioni pratiche della fisica computazionale con dimostrazioni interattive</p>
+                
+                <div class="articles-filter">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">Tutti gli Articoli</button>
+                        <button class="filter-btn" data-filter="computazionale">Fisica Computazionale</button>
+                        <button class="filter-btn" data-filter="didattica">Didattica Innovativa</button>
+                        <button class="filter-btn" data-filter="simulazioni">Simulazioni Numeriche</button>
+                        <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="articles-list">
+                <!-- Articolo 1: Monte Carlo -->
+                <article class="article-card" data-category="computazionale simulazioni">
+                    <div class="article-header">
+                        <span class="article-category">Fisica Computazionale</span>
+                        <h2>Analisi Monte Carlo per Fluidodinamica Computazionale</h2>
+                        <div class="article-meta">
+                            <span><i class="fas fa-calendar"></i> 15 Marzo 2023</span>
+                            <span><i class="fas fa-clock"></i> 12 min</span>
+                            <span><i class="fas fa-chart-line"></i> Avanzato</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <p class="article-excerpt">Applicazione di metodi probabilistici alla simulazione di flussi turbolenti e trasporto di particelle. Implementazione di algoritmi Monte Carlo per problemi di fluidodinamica complessi con visualizzazioni interattive.</p>
+                        
+                        <div class="article-topics">
+                            <div class="topic-tags">
+                                <span class="topic-tag">Monte Carlo</span>
+                                <span class="topic-tag">CFD</span>
+                                <span class="topic-tag">Fluidodinamica</span>
+                                <span class="topic-tag">Simulazioni Stocastiche</span>
+                            </div>
+                        </div>
+                        
+                        <div class="article-features">
+                            <h4>Contenuti Inclusi:</h4>
+                            <ul>
+                                <li>Teoria dei metodi Monte Carlo</li>
+                                <li>Implementazione JavaScript interattiva</li>
+                                <li>Analisi di convergenza e errore</li>
+                                <li>Applicazioni pratiche</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="article-footer">
+                        <a href="articles/monte-carlo.html" class="btn btn-primary">
+                            <i class="fas fa-book-open"></i> Leggi Articolo Completo
+                        </a>
+                        <span class="reading-time">
+                            <i class="fas fa-chart-bar"></i> Include simulazione interattiva
+                        </span>
+                    </div>
+                </article>
+
+                <!-- Articolo 2: Circuiti Oscillanti -->
+                <article class="article-card" data-category="computazionale didattica">
+                    <div class="article-header">
+                        <span class="article-category">Elettromagnetismo</span>
+                        <h2>Circuiti Oscillanti: dalla Teoria alle Simulazioni Numeriche</h2>
+                        <div class="article-meta">
+                            <span><i class="fas fa-calendar"></i> 10 Aprile 2023</span>
+                            <span><i class="fas fa-clock"></i> 15 min</span>
+                            <span><i class="fas fa-chart-line"></i> Intermedio</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <p class="article-excerpt">Analisi completa dei circuiti RLC serie e parallelo, confronto tra soluzioni analitiche e numeriche, implementazione di un simulatore interattivo con visualizzazione in tempo reale delle grandezze elettriche.</p>
+                        
+                        <div class="article-topics">
+                            <div class="topic-tags">
+                                <span class="topic-tag">Circuiti RLC</span>
+                                <span class="topic-tag">Oscillazioni</span>
+                                <span class="topic-tag">Analisi Numerica</span>
+                                <span class="topic-tag">Simulazioni Elettriche</span>
+                            </div>
+                        </div>
+                        
+                        <div class="article-features">
+                            <h4>Contenuti Inclusi:</h4>
+                            <ul>
+                                <li>Equazioni differenziali dei circuiti</li>
+                                <li>Metodi di integrazione numerica</li>
+                                <li>Simulatore interattivo completo</li>
+                                <li>Analisi di risposta in frequenza</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="article-footer">
+                        <a href="articles/circuiti.html" class="btn btn-primary">
+                            <i class="fas fa-book-open"></i> Leggi Articolo Completo
+                        </a>
+                        <span class="reading-time">
+                            <i class="fas fa-bolt"></i> Include simulatore circuiti
+                        </span>
+                    </div>
+                </article>
+
+                <!-- Articolo 3: Machine Learning -->
+                <article class="article-card" data-category="machine-learning computazionale">
+                    <div class="article-header">
+                        <span class="article-category">Intelligenza Artificiale</span>
+                        <h2>Machine Learning applicato all'Analisi di Dati Sperimentali</h2>
+                        <div class="article-meta">
+                            <span><i class="fas fa-calendar"></i> 5 Maggio 2023</span>
+                            <span><i class="fas fa-clock"></i> 18 min</span>
+                            <span><i class="fas fa-chart-line"></i> Avanzato</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <p class="article-excerpt">Utilizzo di tecniche di machine learning per l'analisi di dati fisici sperimentali. Regressione, classificazione e clustering applicati a problemi reali di fisica con implementazioni in TensorFlow.js e visualizzazioni interattive.</p>
+                        
+                        <div class="article-topics">
+                            <div class="topic-tags">
+                                <span class="topic-tag">Machine Learning</span>
+                                <span class="topic-tag">TensorFlow.js</span>
+                                <span class="topic-tag">Analisi Dati</span>
+                                <span class="topic-tag">Fisica Sperimentale</span>
+                            </div>
+                        </div>
+                        
+                        <div class="article-features">
+                            <h4>Contenuti Inclusi:</h4>
+                            <ul>
+                                <li>Regressione su dati fisici</li>
+                                <li>Classificazione di stati quantici</li>
+                                <li>Demo interattiva TensorFlow.js</li>
+                                <li>Interpretazione fisica dei risultati</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="article-footer">
+                        <a href="articles/machine-learning.html" class="btn btn-primary">
+                            <i class="fas fa-book-open"></i> Leggi Articolo Completo
+                        </a>
+                        <span class="reading-time">
+                            <i class="fas fa-robot"></i> Include demo ML interattiva
+                        </span>
+                    </div>
+                </article>
+
+                <!-- Articolo 4: Sistemi Dinamici (in sviluppo) -->
+                <article class="article-card coming-soon" data-category="computazionale simulazioni">
+                    <div class="article-header">
+                        <span class="article-category">Sistemi Dinamici</span>
+                        <h2>Caos Deterministico: dal Pendolo Doppio agli Attrattori Strani</h2>
+                        <div class="article-meta">
+                            <span><i class="fas fa-calendar"></i> In sviluppo</span>
+                            <span><i class="fas fa-clock"></i> ~20 min</span>
+                            <span><i class="fas fa-chart-line"></i> Avanzato</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <p class="article-excerpt">Analisi approfondita del caos deterministico in sistemi fisici. Calcolo degli esponenti di Lyapunov, visualizzazione di attrattori strani e studio della sensibilità alle condizioni iniziali in sistemi complessi.</p>
+                        
+                        <div class="article-topics">
+                            <div class="topic-tags">
+                                <span class="topic-tag">Teoria del Caos</span>
+                                <span class="topic-tag">Sistemi Dinamici</span>
+                                <span class="topic-tag">Attrattori Strani</span>
+                                <span class="topic-tag">Esperti di Lyapunov</span>
+                            </div>
+                        </div>
+                        
+                        <div class="article-features">
+                            <h4>Prossimamente:</h4>
+                            <ul>
+                                <li>Analisi del pendolo doppio caotico</li>
+                                <li>Mappe di Poincaré interattive</li>
+                                <li>Calcolo esponenti di Lyapunov</li>
+                                <li>Visualizzazione di attrattori 3D</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="article-footer">
+                        <button class="btn btn-secondary" disabled>
+                            <i class="fas fa-hourglass-half"></i> In Sviluppo
+                        </button>
+                        <span class="reading-time">
+                            <i class="fas fa-bell"></i> Disponibile a breve
+                        </span>
+                    </div>
+                </article>
+
+                <!-- Articolo 5: Metodi Numerici (in sviluppo) -->
+                <article class="article-card coming-soon" data-category="computazionale didattica">
+                    <div class="article-header">
+                        <span class="article-category">Metodi Numerici</span>
+                        <h2>Integrazione Numerica in Fisica: Runge-Kutta e Verlet</h2>
+                        <div class="article-meta">
+                            <span><i class="fas fa-calendar"></i> In sviluppo</span>
+                            <span><i class="fas fa-clock"></i> ~15 min</span>
+                            <span><i class="fas fa-chart-line"></i> Intermedio</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <p class="article-excerpt">Confronto tra diversi metodi di integrazione numerica per equazioni differenziali in fisica. Implementazione e analisi di errori per metodi di Runge-Kutta, Verlet e altri algoritmi comunemente utilizzati in simulazioni fisiche.</p>
+                        
+                        <div class="article-topics">
+                            <div class="topic-tags">
+                                <span class="topic-tag">Metodi Numerici</span>
+                                <span class="topic-tag">Equazioni Differenziali</span>
+                                <span class="topic-tag">Integrazione</span>
+                                <span class="topic-tag">Analisi Errori</span>
+                            </div>
+                        </div>
+                        
+                        <div class="article-features">
+                            <h4>Prossimamente:</h4>
+                            <ul>
+                                <li>Implementazione metodi Runge-Kutta</li>
+                                <li>Algoritmo di Verlet per sistemi conservativi</li>
+                                <li>Analisi comparativa di stabilità e accuratezza</li>
+                                <li>Applicazioni a problemi fisici reali</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="article-footer">
+                        <button class="btn btn-secondary" disabled>
+                            <i class="fas fa-hourglass-half"></i> In Sviluppo
+                        </button>
+                        <span class="reading-time">
+                            <i class="fas fa-calculator"></i> Include confronto interattivo
+                        </span>
+                    </div>
+                </article>
+
+                <!-- Articolo 6: Visualizzazione Scientifica (in sviluppo) -->
+                <article class="article-card coming-soon" data-category="computazionale didattica">
+                    <div class="article-header">
+                        <span class="article-category">Visualizzazione</span>
+                        <h2>Visualizzazione Scientifica con Canvas e WebGL</h2>
+                        <div class="article-meta">
+                            <span><i class="fas fa-calendar"></i> In sviluppo</span>
+                            <span><i class="fas fa-clock"></i> ~25 min</span>
+                            <span><i class="fas fa-chart-line"></i> Intermedio-Avanzato</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <p class="article-excerpt">Tecniche avanzate di visualizzazione scientifica utilizzando le moderne API web. Implementazione di visualizzazioni 2D e 3D di campi vettoriali, superfici, volumi e dati scientifici complessi.</p>
+                        
+                        <div class="article-topics">
+                            <div class="topic-tags">
+                                <span class="topic-tag">Canvas API</span>
+                                <span class="topic-tag">WebGL</span>
+                                <span class="topic-tag">Visualizzazione</span>
+                                <span class="topic-tag">Dati Scientifici</span>
+                            </div>
+                        </div>
+                        
+                        <div class="article-features">
+                            <h4>Prossimamente:</h4>
+                            <ul>
+                                <li>Visualizzazione campi vettoriali 2D/3D</li>
+                                <li>Plotting di superfici e contorni</li>
+                                <li>Animazioni scientifiche fluide</li>
+                                <li>Ottimizzazione prestazioni</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="article-footer">
+                        <button class="btn btn-secondary" disabled>
+                            <i class="fas fa-hourglass-half"></i> In Sviluppo
+                        </button>
+                        <span class="reading-time">
+                            <i class="fas fa-eye"></i> Ricco di visualizzazioni
+                        </span>
+                    </div>
+                </article>
+            </div>
+
+            <section class="articles-newsletter">
+                <div class="newsletter-content">
+                    <h2><i class="fas fa-newspaper"></i> Resta Aggiornato</h2>
+                    <p>Vuoi essere informato quando pubblico nuovi articoli scientifici con simulazioni interattive?</p>
+                    
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="La tua email" aria-label="Indirizzo email per newsletter">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Iscriviti
+                        </button>
+                    </div>
+                    
+                    <p class="newsletter-note"><small>Niente spam, solo articoli di qualità quando vengono pubblicati.</small></p>
+                </div>
+            </section>
+
+            <section class="articles-resources">
+                <h2><i class="fas fa-toolbox"></i> Risorse Aggiuntive</h2>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3>Codice Sorgente</h3>
+                        <p>Tutto il codice delle simulazioni e degli articoli è disponibile open source su GitHub.</p>
+                        <a href="https://github.com/diiannimarco" class="resource-link">Esplora il repository →</a>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>Video Spiegazioni</h3>
+                        <p>Video approfonditi che spiegano i concetti presentati negli articoli.</p>
+                        <a href="#" class="resource-link">Guarda i video →</a>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h3>Dataset</h3>
+                        <p>Dataset utilizzati negli articoli disponibili per download e analisi autonoma.</p>
+                        <a href="#" class="resource-link">Scarica dataset →</a>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Categorie Articoli</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-filter="computazionale" class="filter-link">Fisica Computazionale</a></li>
+                        <li><a href="#" data-filter="didattica" class="filter-link">Didattica Innovativa</a></li>
+                        <li><a href="#" data-filter="simulazioni" class="filter-link">Simulazioni Numeriche</a></li>
+                        <li><a href="#" data-filter="machine-learning" class="filter-link">Machine Learning</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>QR Code Articoli</h3>
+                    <div class="qr-code">
+                        <i class="fas fa-qrcode" style="font-size: 48px; color: #666;"></i>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Contatti Autore</h3>
+                    <ul class="footer-links">
+                        <li><a href="chi-sono.html">Chi Sono</a></li>
+                        <li><a href="mailto:marco.diianni@example.com">Email</a></li>
+                        <li><a href="https://github.com/diiannimarco">GitHub</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Marco Di Ianni. Tutti i diritti riservati.</p>
+                <p>Articoli scientifici con licenza Creative Commons Attribution 4.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js" defer></script>
+    <script>
+        // Filtro articoli
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const articleCards = document.querySelectorAll('.article-card');
+            const filterLinks = document.querySelectorAll('.filter-link');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Rimuovi classe active da tutti i bottoni
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Aggiungi classe active al bottone cliccato
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Filtra gli articoli
+                    articleCards.forEach(card => {
+                        if (filter === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            const categories = card.getAttribute('data-category');
+                            if (categories.includes(filter)) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+            
+            // Filtro dai link nel footer
+            filterLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Simula click sul bottone corrispondente
+                    const correspondingButton = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
+                    if (correspondingButton) {
+                        correspondingButton.click();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

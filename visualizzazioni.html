@@ -1,28 +1,316 @@
-<!-- In visualizzazioni.html -->
-<section class="simulation-section">
-    <h2>Pendolo Semplice</h2>
-    <div class="simulation-container">
-        <canvas id="pendulumCanvas" width="800" height="500"></canvas>
-        <div class="controls">
-            <label>Lunghezza: <span id="lengthValue">100</span> cm</label>
-            <input type="range" id="lengthSlider" min="50" max="200" value="100">
-            
-            <label>Angolo iniziale: <span id="angleValue">45</span>°</label>
-            <input type="range" id="angleSlider" min="10" max="80" value="45">
-            
-            <label>Gravità: <span id="gravityValue">9.81</span> m/s²</label>
-            <input type="range" id="gravitySlider" min="1" max="20" value="9.81" step="0.1">
-            
-            <button id="startBtn">Start</button>
-            <button id="pauseBtn">Pausa</button>
-            <button id="resetBtn">Reset</button>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulazioni Interattive - Marco Di Ianni</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1>Marco Di Ianni</h1>
+                <p class="subtitle">Fisico Computazionale</p>
+            </div>
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="chi-sono.html">Chi Sono</a></li>
+                    <li><a href="studi.html">Studi</a></li>
+                    <li><a href="insegnamento.html">Insegnamento</a></li>
+                    <li><a href="visualizzazioni.html" class="active">Simulazioni</a></li>
+                    <li><a href="articoli.html">Articoli</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="physics-info">
-            <p>Periodo: <span id="periodValue">2.01</span> s</p>
-            <p>Energia totale: <span id="energyValue">3.42</span> J</p>
-            <button id="exportData">Esporta Dati (CSV)</button>
-        </div>
-    </div>
-</section>
+    </header>
 
-<script src="js/simulations/pendolo-semplice.js"></script>
+    <main class="container">
+        <article class="simulations-page">
+            <header class="page-header">
+                <h1>Simulazioni Fisiche Interattive</h1>
+                <p class="page-subtitle">Esplora fenomeni fisici attraverso simulazioni numeriche in tempo reale. Modifica parametri, osserva effetti e analizza dati.</p>
+            </header>
+
+            <div class="simulations-tabs" role="tablist" aria-label="Simulazioni disponibili">
+                <button class="tab-button active" data-tab="pendulum" role="tab" aria-selected="true" aria-controls="pendulum-panel">
+                    <i class="fas fa-weight-hanging"></i> Pendolo Semplice
+                </button>
+                <button class="tab-button" data-tab="double-pendulum" role="tab" aria-selected="false" aria-controls="double-pendulum-panel">
+                    <i class="fas fa-link"></i> Pendolo Doppio
+                </button>
+                <button class="tab-button" data-tab="fluid" role="tab" aria-selected="false" aria-controls="fluid-panel">
+                    <i class="fas fa-water"></i> Fluidodinamica
+                </button>
+                <button class="tab-button" data-tab="circuit" role="tab" aria-selected="false" aria-controls="circuit-panel">
+                    <i class="fas fa-bolt"></i> Circuiti RLC
+                </button>
+            </div>
+
+            <!-- PANEL 1: PENDOLO SEMPLICE -->
+            <section id="pendulum-panel" class="simulation-panel active" role="tabpanel" aria-labelledby="pendulum-tab">
+                <div class="simulation-container">
+                    <div class="simulation-visualization">
+                        <canvas id="pendulum-canvas" class="simulation-canvas" width="800" height="500"></canvas>
+                    </div>
+                    <div class="simulation-controls" id="pendulum-controls">
+                        <!-- I controlli saranno inseriti da JavaScript -->
+                    </div>
+                </div>
+
+                <div class="equations-panel">
+                    <h3><i class="fas fa-square-root-alt"></i> Fondamenti Matematici</h3>
+                    <div class="equation">
+                        <p><strong>Equazione del moto:</strong></p>
+                        <p>$$\frac{d^2\theta}{dt^2} + \frac{b}{m}\frac{d\theta}{dt} + \frac{g}{L}\sin\theta = 0$$</p>
+                    </div>
+                    <div class="equation">
+                        <p><strong>Energia del sistema:</strong></p>
+                        <p>$$E = \frac{1}{2}mL^2\left(\frac{d\theta}{dt}\right)^2 + mgL(1 - \cos\theta)$$</p>
+                    </div>
+                    <div class="equation">
+                        <p><strong>Periodo per piccole oscillazioni:</strong></p>
+                        <p>$$T \approx 2\pi\sqrt{\frac{L}{g}}$$</p>
+                    </div>
+                </div>
+
+                <div class="data-export">
+                    <h3><i class="fas fa-download"></i> Esporta Dati</h3>
+                    <p>Scarica i dati della simulazione per analisi ulteriori:</p>
+                    <div class="export-options">
+                        <button class="btn btn-primary" id="export-pendulum-csv">
+                            <i class="fas fa-file-csv"></i> Scarica CSV
+                        </button>
+                        <button class="btn btn-secondary" id="export-pendulum-json">
+                            <i class="fas fa-file-code"></i> Scarica JSON
+                        </button>
+                        <button class="btn" id="reset-pendulum-data">
+                            <i class="fas fa-trash"></i> Cancella Dati
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PANEL 2: PENDOLO DOPPIO -->
+            <section id="double-pendulum-panel" class="simulation-panel" role="tabpanel" aria-labelledby="double-pendulum-tab" hidden>
+                <div class="simulation-container">
+                    <div class="simulation-visualization">
+                        <canvas id="double-pendulum-canvas" class="simulation-canvas" width="800" height="500"></canvas>
+                    </div>
+                    <div class="simulation-controls" id="double-pendulum-controls">
+                        <!-- I controlli saranno inseriti da JavaScript -->
+                    </div>
+                </div>
+
+                <div class="equations-panel">
+                    <h3><i class="fas fa-square-root-alt"></i> Sistema Caotico</h3>
+                    <div class="equation">
+                        <p><strong>Equazioni di Lagrange:</strong></p>
+                        <p>$$\begin{aligned}
+                        \ddot{\theta}_1 &= \frac{-g(2m_1+m_2)\sin\theta_1 - m_2g\sin(\theta_1-2\theta_2) - 2\sin(\theta_1-\theta_2)m_2(\dot{\theta}_2^2L_2+\dot{\theta}_1^2L_1\cos(\theta_1-\theta_2))}{L_1(2m_1+m_2-m_2\cos(2\theta_1-2\theta_2))} \\
+                        \ddot{\theta}_2 &= \frac{2\sin(\theta_1-\theta_2)(\dot{\theta}_1^2L_1(m_1+m_2)+g(m_1+m_2)\cos\theta_1+\dot{\theta}_2^2L_2m_2\cos(\theta_1-\theta_2))}{L_2(2m_1+m_2-m_2\cos(2\theta_1-2\theta_2))}
+                        \end{aligned}$$</p>
+                    </div>
+                    <div class="equation">
+                        <p><strong>Esponente di Lyapunov:</strong></p>
+                        <p>$$\lambda = \lim_{t \to \infty} \frac{1}{t} \ln \frac{|\delta(t)|}{|\delta(0)|}$$</p>
+                    </div>
+                </div>
+
+                <div class="data-export">
+                    <h3><i class="fas fa-download"></i> Analisi del Caos</h3>
+                    <div class="export-options">
+                        <button class="btn btn-primary" id="export-double-csv">
+                            <i class="fas fa-file-csv"></i> Traiettorie CSV
+                        </button>
+                        <button class="btn btn-secondary" id="export-lyapunov">
+                            <i class="fas fa-chart-line"></i> Esponenti Lyapunov
+                        </button>
+                        <button class="btn" id="save-double-state">
+                            <i class="fas fa-save"></i> Salva Stato
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PANEL 3: FLUIDODINAMICA -->
+            <section id="fluid-panel" class="simulation-panel" role="tabpanel" aria-labelledby="fluid-tab" hidden>
+                <div class="simulation-container">
+                    <div class="simulation-visualization">
+                        <canvas id="fluid-canvas" class="simulation-canvas" width="800" height="500"></canvas>
+                    </div>
+                    <div class="simulation-controls" id="fluid-controls">
+                        <!-- I controlli saranno inseriti da JavaScript -->
+                    </div>
+                </div>
+
+                <div class="equations-panel">
+                    <h3><i class="fas fa-square-root-alt"></i> Equazioni di Navier-Stokes</h3>
+                    <div class="equation">
+                        <p><strong>Conservazione della massa:</strong></p>
+                        <p>$$\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{u}) = 0$$</p>
+                    </div>
+                    <div class="equation">
+                        <p><strong>Conservazione della quantità di moto:</strong></p>
+                        <p>$$\rho\left(\frac{\partial \mathbf{u}}{\partial t} + \mathbf{u} \cdot \nabla \mathbf{u}\right) = -\nabla p + \mu \nabla^2 \mathbf{u} + \mathbf{f}$$</p>
+                    </div>
+                    <div class="equation">
+                        <p><strong>Numero di Reynolds:</strong></p>
+                        <p>$$Re = \frac{\rho u L}{\mu}$$</p>
+                    </div>
+                </div>
+
+                <div class="data-export">
+                    <h3><i class="fas fa-download"></i> Analisi del Flusso</h3>
+                    <div class="export-options">
+                        <button class="btn btn-primary" id="export-fluid-data">
+                            <i class="fas fa-file-csv"></i> Dati Campo Velocità
+                        </button>
+                        <button class="btn btn-secondary" id="export-fluid-visual">
+                            <i class="fas fa-image"></i> Esporta Immagine
+                        </button>
+                        <button class="btn" id="clear-fluid">
+                            <i class="fas fa-eraser"></i> Pulisci Visualizzazione
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PANEL 4: CIRCUITI RLC -->
+            <section id="circuit-panel" class="simulation-panel" role="tabpanel" aria-labelledby="circuit-tab" hidden>
+                <div class="simulation-container">
+                    <div class="simulation-visualization">
+                        <canvas id="circuit-canvas" class="simulation-canvas" width="800" height="500"></canvas>
+                        <div id="circuit-chart" style="width: 100%; height: 200px; margin-top: 20px;"></div>
+                    </div>
+                    <div class="simulation-controls" id="circuit-controls">
+                        <!-- I controlli saranno inseriti da JavaScript -->
+                    </div>
+                </div>
+
+                <div class="equations-panel">
+                    <h3><i class="fas fa-square-root-alt"></i> Circuito RLC Serie</h3>
+                    <div class="equation">
+                        <p><strong>Equazione differenziale:</strong></p>
+                        <p>$$L\frac{d^2q}{dt^2} + R\frac{dq}{dt} + \frac{1}{C}q = V(t)$$</p>
+                    </div>
+                    <div class="equation">
+                        <p><strong>Frequenza di risonanza:</strong></p>
+                        <p>$$\omega_0 = \frac{1}{\sqrt{LC}}$$</p>
+                    </div>
+                    <div class="equation">
+                        <p><strong>Fattore di qualità:</strong></p>
+                        <p>$$Q = \frac{1}{R}\sqrt{\frac{L}{C}}$$</p>
+                    </div>
+                </div>
+
+                <div class="data-export">
+                    <h3><i class="fas fa-download"></i> Analisi Circuitale</h3>
+                    <div class="export-options">
+                        <button class="btn btn-primary" id="export-circuit-csv">
+                            <i class="fas fa-file-csv"></i> Dati Temporali
+                        </button>
+                        <button class="btn btn-secondary" id="export-circuit-fft">
+                            <i class="fas fa-wave-square"></i> Analisi FFT
+                        </button>
+                        <button class="btn" id="reset-circuit">
+                            <i class="fas fa-redo"></i> Reset Circuito
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="simulation-instructions">
+                <h2><i class="fas fa-info-circle"></i> Istruzioni per l'Uso</h2>
+                <div class="instructions-grid">
+                    <div class="instruction">
+                        <div class="instruction-icon">
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+                        <h3>Modifica Parametri</h3>
+                        <p>Utilizza gli slider per modificare i parametri fisici in tempo reale e osserva gli effetti sul sistema.</p>
+                    </div>
+                    <div class="instruction">
+                        <div class="instruction-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <h3>Controlli di Esecuzione</h3>
+                        <p>Start, Pausa e Reset permettono di controllare l'esecuzione della simulazione.</p>
+                    </div>
+                    <div class="instruction">
+                        <div class="instruction-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h3>Esporta Dati</h3>
+                        <p>Scarica i dati generati per analisi ulteriori in formato CSV o JSON.</p>
+                    </div>
+                    <div class="instruction">
+                        <div class="instruction-icon">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                        <h3>Visualizzazione</h3>
+                        <p>Le simulazioni sono ottimizzate per schermi di diverse dimensioni. Prova a ridimensionare la finestra!</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Simulazioni Disponibili</h3>
+                    <ul class="footer-links">
+                        <li><a href="#pendulum" data-tab="pendulum" class="footer-sim-link">Pendolo Semplice</a></li>
+                        <li><a href="#double-pendulum" data-tab="double-pendulum" class="footer-sim-link">Pendolo Doppio</a></li>
+                        <li><a href="#fluid" data-tab="fluid" class="footer-sim-link">Fluidodinamica</a></li>
+                        <li><a href="#circuit" data-tab="circuit" class="footer-sim-link">Circuiti RLC</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>QR Code Simulazioni</h3>
+                    <div class="qr-code">
+                        <i class="fas fa-qrcode" style="font-size: 48px; color: #666;"></i>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Risorse</h3>
+                    <ul class="footer-links">
+                        <li><a href="articoli.html">Articoli Scientifici</a></li>
+                        <li><a href="insegnamento.html">Materiale Didattico</a></li>
+                        <li><a href="https://github.com/diiannimarco">Codice Sorgente</a></li>
+                        <li><a href="chi-sono.html">Contatti</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Marco Di Ianni. Tutti i diritti riservati.</p>
+                <p>Simulazioni sviluppate con JavaScript vanilla e Canvas API</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript per simulazioni -->
+    <script src="main.js" defer></script>
+    <script src="physics-engine.js" defer></script>
+    <script src="simulations/simple-pendulum.js" defer></script>
+    <script src="simulations/double-pendulum.js" defer></script>
+    <script src="simulations/fluid-dynamics.js" defer></script>
+    <script src="simulations/circuit-rlc.js" defer></script>
+    <script src="assets/js/ui-controls.js" defer></script>
+    <script src="assets/js/data-export.js" defer></script>
+    
+    <!-- Chart.js per grafici -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

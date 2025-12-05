@@ -1,64 +1,183 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marco Diianni - Scienza Interattiva</title>
+    <title>Marco Di Ianni - Fisico Computazionale</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- MathJax per equazioni -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <!-- Header (come template) -->
-    
-    <main class="container">
-        <!-- Hero Section -->
+    <!-- Header con menu di navigazione -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1>Marco Di Ianni</h1>
+                <p class="subtitle">Fisico Computazionale</p>
+            </div>
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="chi-sono.html">Chi Sono</a></li>
+                    <li><a href="studi.html">Studi</a></li>
+                    <li><a href="insegnamento.html">Insegnamento</a></li>
+                    <li><a href="visualizzazioni.html">Simulazioni</a></li>
+                    <li><a href="articoli.html">Articoli</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sezione Hero -->
+    <main>
         <section class="hero">
-            <div class="hero-image">
-                <img src="images/profilo.jpeg" alt="Marco Diianni" class="profile-img">
-            </div>
-            <div class="hero-content">
-                <h1>Marco Diianni</h1>
-                <p class="tagline">Fisico, Programmatore, Ricercatore</p>
-                <p class="quote">"La comprensione della natura attraverso la matematica e la simulazione computazionale"</p>
-                <a href="visualizzazioni.html" class="cta-button">Esplora Simulazioni</a>
-            </div>
-        </section>
-
-        <!-- Grid Cards -->
-        <section class="cards-grid">
-            <div class="card">
-                <h3><a href="chi-sono.html">Chi Sono</a></h3>
-                <p>Biografia professionale e competenze</p>
-            </div>
-            <div class="card">
-                <h3><a href="studi.html">Studi</a></h3>
-                <p>Percorso formativo e certificazioni</p>
-            </div>
-            <div class="card">
-                <h3><a href="insegnamento.html">Insegnamento</a></h3>
-                <p>Metodologia didattica innovativa</p>
-            </div>
-            <div class="card">
-                <h3><a href="visualizzazioni.html">Simulazioni</a></h3>
-                <p>Fisica interattiva e visualizzazioni</p>
-            </div>
-            <div class="card">
-                <h3><a href="articoli.html">Articoli</a></h3>
-                <p>Blog scientifico e ricerca</p>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-image">
+                        <img src="images/profilo.jpeg" alt="Foto profilo di Marco Di Ianni" width="300" height="300">
+                    </div>
+                    <div class="hero-text">
+                        <h2>Esplorare la fisica attraverso la simulazione computazionale</h2>
+                        <p class="tagline">Fisica teorica, modellazione numerica, didattica innovativa e sviluppo software</p>
+                        <div class="cta-buttons">
+                            <a href="visualizzazioni.html" class="btn btn-primary">Vai alle Simulazioni</a>
+                            <a href="chi-sono.html" class="btn btn-secondary">Scopri di più su di me</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Testimonial -->
-        <section class="testimonial">
-            <blockquote>
-                "L'importante è non smettere di fare domande. La curiosità ha la sua ragione di esistere."
-                <cite>— Albert Einstein</cite>
-            </blockquote>
+        <!-- Grid di card per navigazione -->
+        <section class="cards-grid-section">
+            <div class="container">
+                <h2 class="section-title">Esplora la Piattaforma</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Chi Sono</h3>
+                        <p>Biografia professionale, competenze e approccio scientifico</p>
+                        <a href="chi-sono.html" class="card-link">Scopri di più →</a>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Studi</h3>
+                        <p>Formazione, pubblicazioni e competenze tecniche</p>
+                        <a href="studi.html" class="card-link">Vedi formazione →</a>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3>Insegnamento</h3>
+                        <p>Metodologia didattica innovativa con approccio scientifico</p>
+                        <a href="insegnamento.html" class="card-link">Scopri metodo →</a>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                        <h3>Simulazioni</h3>
+                        <p>Modelli fisici interattivi: pendoli, fluidi, circuiti</p>
+                        <a href="visualizzazioni.html" class="card-link">Esplora simulazioni →</a>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Articoli</h3>
+                        <p>Approfondimenti scientifici con dimostrazioni interattive</p>
+                        <a href="articoli.html" class="card-link">Leggi articoli →</a>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                        <h3>QR Code</h3>
+                        <p>Condividi questa piattaforma scientifica</p>
+                        <div class="qr-placeholder" id="qr-code-home"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Anteprima simulazioni -->
+        <section class="preview-section">
+            <div class="container">
+                <h2 class="section-title">Simulazioni in Anteprima</h2>
+                <div class="simulation-preview">
+                    <div class="simulation-item">
+                        <div class="simulation-canvas-container">
+                            <canvas id="preview-pendulum" width="400" height="300"></canvas>
+                        </div>
+                        <h3>Pendolo Semplice</h3>
+                        <p>Simulazione realistica con attrito e parametri variabili</p>
+                        <a href="visualizzazioni.html#pendulum" class="btn btn-small">Prova ora</a>
+                    </div>
+                    <div class="simulation-item">
+                        <div class="simulation-canvas-container">
+                            <canvas id="preview-circuit" width="400" height="300"></canvas>
+                        </div>
+                        <h3>Circuiti RLC</h3>
+                        <p>Simulatore di circuiti oscillanti con analisi in tempo reale</p>
+                        <a href="visualizzazioni.html#circuit" class="btn btn-small">Prova ora</a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
-    <!-- Footer (come template) -->
-    
-    <script src="js/main.js"></script>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contatti</h3>
+                    <p>Email: <a href="mailto:marco.diianni@example.com">marco.diianni@example.com</a></p>
+                    <p>GitHub: <a href="https://github.com/diiannimarco">@diiannimarco</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>QR Code Sito</h3>
+                    <div class="qr-code" id="qr-code-footer">
+                        <!-- QR code sarà generato via JavaScript -->
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Link Rapidi</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="chi-sono.html">Chi Sono</a></li>
+                        <li><a href="visualizzazioni.html">Simulazioni</a></li>
+                        <li><a href="articoli.html">Articoli</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Marco Di Ianni. Tutti i diritti riservati.</p>
+                <p>Questo sito è open source su <a href="https://github.com/diiannimarco/diiannimarco.github.io">GitHub</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="main.js" defer></script>
+    <script src="assets/js/ui-controls.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,283 @@
+/* Stili per sezioni simulazioni */
+.simulation-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.simulation-item {
+    background-color: var(--background-card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-normal);
+}
+
+.simulation-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.simulation-canvas-container {
+    width: 100%;
+    height: 300px;
+    background-color: var(--simulation-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.simulation-canvas-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+}
+
+.simulation-canvas-container canvas {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.simulation-item h3 {
+    padding: var(--spacing-md) var(--spacing-md) 0;
+    color: var(--text-dark);
+    font-size: 1.5rem;
+}
+
+.simulation-item p {
+    padding: 0 var(--spacing-md);
+    color: var(--text-medium);
+    margin-bottom: var(--spacing-md);
+}
+
+.simulation-item .btn-small {
+    margin: 0 var(--spacing-md) var(--spacing-md);
+}
+
+/* Per pagina simulazioni completa */
+.simulations-page {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.simulations-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: var(--spacing-xs);
+}
+
+.tab-button {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-medium);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.tab-button:hover {
+    color: var(--primary-color);
+    background-color: rgba(74, 111, 165, 0.05);
+}
+
+.tab-button.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+    background-color: rgba(74, 111, 165, 0.1);
+}
+
+.simulation-panel {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.simulation-panel.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.simulation-container {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    background-color: var(--background-card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.simulation-visualization {
+    background-color: var(--simulation-bg);
+    padding: var(--spacing-md);
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.simulation-canvas {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: var(--radius-sm);
+}
+
+.simulation-controls {
+    padding: var(--spacing-lg);
+    border-left: 1px solid var(--border-color);
+    overflow-y: auto;
+    max-height: 500px;
+}
+
+.control-group {
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.control-group:last-child {
+    border-bottom: none;
+}
+
+.control-group h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.control-item {
+    margin-bottom: var(--spacing-md);
+}
+
+.control-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-xs);
+    font-size: 0.9rem;
+}
+
+.control-label span:first-child {
+    color: var(--text-medium);
+}
+
+.control-label span:last-child {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+}
+
+.control-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background-color: var(--border-color);
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.control-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    border: 3px solid white;
+    box-shadow: var(--shadow-sm);
+}
+
+.control-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.control-btn {
+    padding: var(--spacing-sm);
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-medium);
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+.control-btn:hover {
+    background-color: var(--primary-light);
+    color: white;
+    border-color: var(--primary-light);
+}
+
+.control-btn.primary {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.control-btn.primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.equations-panel {
+    background-color: var(--background-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.equations-panel h3 {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-dark);
+    font-size: 1.25rem;
+}
+
+.equation {
+    font-size: 1.1rem;
+    margin: var(--spacing-md) 0;
+    padding: var(--spacing-md);
+    background-color: rgba(74, 111, 165, 0.05);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--primary-color);
+}
+
+.data-export {
+    background-color: var(--background-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.export-options {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    margin-top: var(--spacing-md);
+}

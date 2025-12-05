@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisi Monte Carlo per Fluidodinamica Computazionale | Marco Di Ianni</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1>Marco Di Ianni</h1>
+                <p class="subtitle">Fisico Computazionale</p>
+            </div>
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../chi-sono.html">Chi Sono</a></li>
+                    <li><a href="../studi.html">Studi</a></li>
+                    <li><a href="../insegnamento.html">Insegnamento</a></li>
+                    <li><a href="../visualizzazioni.html">Simulazioni</a></li>
+                    <li><a href="../articoli.html" class="active">Articoli</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="article-page">
+            <header class="article-hero">
+                <nav class="article-breadcrumb">
+                    <a href="../articoli.html">Articoli</a> / 
+                    <span>Analisi Monte Carlo per Fluidodinamica</span>
+                </nav>
+                
+                <h1 class="article-title">Analisi Monte Carlo per Fluidodinamica Computazionale</h1>
+                <p class="article-subtitle">Applicazione di metodi probabilistici alla simulazione di flussi turbolenti e trasporto di particelle</p>
+                
+                <div class="article-meta-full">
+                    <div class="meta-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>Pubblicato: 15 Marzo 2023</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Tempo di lettura: 12 minuti</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-tags"></i>
+                        <span>Monte Carlo, CFD, Fluidodinamica, Simulazioni</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Livello: Avanzato</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="article-body">
+                <section>
+                    <h2>Introduzione</h2>
+                    <p>I metodi Monte Carlo rappresentano uno strumento potente per la risoluzione di problemi complessi in fluidodinamica computazionale (CFD). A differenza degli approcci deterministici tradizionali, i metodi probabilistici permettono di affrontare problemi con un alto grado di complessità geometrica o fenomeni stocastici intrinseci.</p>
+                    
+                    <p>In questo articolo esploreremo l'applicazione di tecniche Monte Carlo alla simulazione di flussi turbolenti e al trasporto di particelle in fluidi. Implementeremo un simulatore interattivo che dimostra i principi fondamentali e confronteremo i risultati con soluzioni analitiche quando disponibili.</p>
+                </section>
+
+                <section>
+                    <h2>Fondamenti Teorici</h2>
+                    
+                    <h3>Il Metodo Monte Carlo</h3>
+                    <p>Il metodo Monte Carlo si basa sull'uso di numeri casuali per risolvere problemi deterministici. L'idea fondamentale è quella di approssimare una quantità di interesse attraverso la media di molte realizzazioni di un processo stocastico.</p>
+                    
+                    <div class="equation">
+                        $$I = \int_a^b f(x) dx \approx \frac{b-a}{N} \sum_{i=1}^N f(x_i)$$
+                    </div>
+                    
+                    <p>dove \(x_i\) sono punti campionati casualmente nell'intervallo \([a, b]\). L'errore della stima decresce come \(O(1/\sqrt{N})\), indipendentemente dalla dimensionalità del problema.</p>
+                    
+                    <h3>Equazioni di Navier-Stokes</h3>
+                    <p>Per un fluido newtoniano incomprimibile, le equazioni di Navier-Stokes sono:</p>
+                    
+                    <div class="equation">
+                        $$\frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u} \cdot \nabla)\mathbf{u} = -\frac{1}{\rho}\nabla p + \nu\nabla^2\mathbf{u} + \mathbf{f}$$
+                    </div>
+                    
+                    <div class="equation">
+                        $$\nabla \cdot \mathbf{u} = 0$$
+                    </div>
+                    
+                    <p>dove \(\mathbf{u}\) è la velocità, \(p\) la pressione, \(\rho\) la densità, \(\nu\) la viscosità cinematica e \(\mathbf{f}\) le forze esterne.</p>
+                </section>
+
+                <section>
+                    <h2>Implementazione del Simulatore Monte Carlo</h2>
+                    
+                    <p>Il nostro simulatore implementa un metodo Monte Carlo semplificato per il trasporto di particelle in un campo di flusso. Le particelle seguono traiettorie stocastiche influenzate dalla velocità media del fluido e da fluttuazioni turbolente.</p>
+                    
+                    <div class="code-block">
+// Pseudocodice algoritmo Monte Carlo per trasporto particelle
+function simulateParticleTransport(particles, flowField, dt, steps) {
+    for each particle in particles {
+        // Posizione iniziale casuale
+        particle.position = randomPositionInDomain();
+        particle.velocity = Vector.zero();
+        particle.trajectory = [];
+        
+        for step from 1 to steps {
+            // Calcola velocità totale (media + fluttuazione)
+            const meanVelocity = flowField.getVelocity(particle.position);
+            const fluctuation = generateTurbulentFluctuation();
+            const totalVelocity = meanVelocity.add(fluctuation);
+            
+            // Aggiorna posizione (integrazione di Eulero)
+            particle.position = particle.position.add(totalVelocity.multiply(dt));
+            
+            // Boundary conditions
+            handleBoundaryCollision(particle);
+            
+            // Salva traiettoria
+            particle.trajectory.push(particle.position.clone());
+        }
+    }
+    
+    return calculateStatistics(particles);
+}
+                    </div>
+                    
+                    <div class="inline-simulation" id="monte-carlo-demo">
+                        <p>Caricamento simulazione Monte Carlo...</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Risultati e Analisi</h2>
+                    
+                    <div class="figure">
+                        <canvas id="results-chart" width="800" height="400"></canvas>
+                        <p class="figure-caption">Confronto tra metodo Monte Carlo e soluzione analitica per diffusione di particelle in un flusso di Couette.</p>
+                    </div>
+                    
+                    <p>L'analisi dei risultati mostra che il metodo Monte Carlo fornisce una buona approssimazione della soluzione analitica, specialmente per un numero elevato di campioni. L'errore relativo diminuisce come previsto con \(1/\sqrt{N}\):</p>
+                    
+                    <div class="equation">
+                        $$\epsilon_{rel} = \frac{|\hat{I} - I_{exatto}|}{|I_{exatto}|} \propto \frac{1}{\sqrt{N}}$$
+                    </div>
+                    
+                    <p>Per \(N = 10^6\) particelle, otteniamo un errore relativo inferiore all'1% per la maggior parte delle quantità di interesse.</p>
+                </section>
+
+                <section>
+                    <h2>Applicazioni Pratiche</h2>
+                    
+                    <h3>Diffusione di Inquinanti</h3>
+                    <p>I metodi Monte Carlo sono particolarmente efficaci per modellare la diffusione di inquinanti in corpi idrici o atmosfera. La natura stocastica del metodo cattura bene la dispersione turbolenta.</p>
+                    
+                    <h3>Trasporto di Calore</h3>
+                    <p>Nel trasporto di calore, le tecniche Monte Carlo possono simulare il trasferimento radiativo in mezzi complessi, dove i metodi tradizionali diventano computazionalmente proibitivi.</p>
+                    
+                    <h3>Dinamica Molecolare</h3>
+                    <p>Sebbene non strettamente fluidodinamica, la dinamica molecolare con metodi Monte Carlo è fondamentale per comprendere proprietà microscopiche che influenzano il comportamento macroscopico dei fluidi.</p>
+                </section>
+
+                <section>
+                    <h2>Conclusione</h2>
+                    <p>I metodi Monte Carlo offrono un approccio flessibile e potente per la simulazione di problemi complessi in fluidodinamica. Sebbene computazionalmente intensivi, la loro indipendenza dalla dimensionalità e la capacità di gestire geometrie complesse li rendono strumenti preziosi nella cassetta degli attrezzi del fisico computazionale.</p>
+                    
+                    <p>L'implementazione interattiva presentata in questo articolo dimostra i principi fondamentali e può servire come punto di partenza per esplorazioni più avanzate. Le estensioni possibili includono l'incorporazione di modelli di turbolenza più sofisticati, l'ottimizzazione parallela e l'applicazione a problemi specifici di ingegneria.</p>
+                </section>
+
+                <section class="references">
+                    <h3>Riferimenti Bibliografici</h3>
+                    <ol>
+                        <li>Kalos, M. H., & Whitlock, P. A. (2008). <em>Monte Carlo Methods</em>. Wiley-VCH.</li>
+                        <li>Pope, S. B. (2000). <em>Turbulent Flows</em>. Cambridge University Press.</li>
+                        <li>Robert, C. P., & Casella, G. (2004). <em>Monte Carlo Statistical Methods</em>. Springer.</li>
+                        <li>Liu, J. S. (2008). <em>Monte Carlo Strategies in Scientific Computing</em>. Springer.</li>
+                    </ol>
+                </section>
+            </div>
+
+            <div class="article-navigation">
+                <a href="../articoli.html" class="nav-button">
+                    <i class="fas fa-arrow-left"></i> Tutti gli Articoli
+                </a>
+                <a href="circuiti.html" class="nav-button">
+                    Prossimo Articolo: Circuiti Oscillanti
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigazione</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../articoli.html">Articoli</a></li>
+                        <li><a href="../visualizzazioni.html">Simulazioni</a></li>
+                        <li><a href="../insegnamento.html">Insegnamento</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>QR Code Articolo</h3>
+                    <div class="qr-code">
+                        <i class="fas fa-qrcode" style="font-size: 48px; color: #666;"></i>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Condividi</h3>
+                    <div class="social-share">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Marco Di Ianni. Tutti i diritti riservati.</p>
+                <p>Articolo scientifico - Metodi Monte Carlo in Fluidodinamica</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+/* CSS Custom Properties per tema chiaro/scuro */
+:root {
+    /* Colori primari */
+    --primary-color: #4a6fa5;
+    --primary-dark: #166088;
+    --primary-light: #6b9bd5;
+    --secondary-color: #d4a017;
+    
+    /* Tema chiaro (default) */
+    --background-light: #f8f9fa;
+    --background-card: #ffffff;
+    --text-dark: #2c3e50;
+    --text-medium: #4a5568;
+    --text-light: #718096;
+    --border-color: #e2e8f0;
+    
+    /* Colori simulazioni */
+    --simulation-bg: #1a1a2e;
+    --simulation-grid: #2a2a4e;
+    --simulation-object: #4a9fff;
+    --simulation-trail: #00ffaa;
+    
+    /* Spaziature */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Border radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-round: 50%;
+    
+    /* Ombre */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+    
+    /* Transizioni */
+    --transition-fast: 150ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
+}
+
+/* Tema scuro */
+[data-theme="dark"] {
+    --background-light: #121212;
+    --background-card: #1e1e1e;
+    --text-dark: #e2e8f0;
+    --text-medium: #cbd5e0;
+    --text-light: #a0aec0;
+    --border-color: #2d3748;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.6);
+}

@@ -1,0 +1,25 @@
+{
+  "metadata": {
+    "description": "Dati dimostrativi per circuito RLC serie",
+    "parameters": {
+      "resistance": 10,
+      "inductance": 0.1,
+      "capacitance": 0.001,
+      "voltage": 5,
+      "frequency": 50
+    },
+    "generated": "2023-12-01T10:00:00Z"
+  },
+  "data": [
+    {"time": 0.000, "current": 0.000, "voltage": 0.000, "charge": 0.000},
+    {"time": 0.001, "current": 0.025, "voltage": 0.156, "charge": 0.000},
+    {"time": 0.002, "current": 0.049, "voltage": 0.309, "charge": 0.000},
+    {"time": 0.003, "current": 0.072, "voltage": 0.454, "charge": 0.000},
+    {"time": 0.004, "current": 0.092, "voltage": 0.588, "charge": 0.000},
+    {"time": 0.005, "current": 0.110, "voltage": 0.707, "charge": 0.001},
+    {"time": 0.006, "current": 0.124, "voltage": 0.809, "charge": 0.001},
+    {"time": 0.007, "current": 0.134, "voltage": 0.891, "charge": 0.001},
+    {"time": 0.008, "current": 0.139, "voltage": 0.951, "charge": 0.001},
+    {"time": 0.009, "current": 0.140, "voltage": 0.988, "charge": 0.001}
+  ]
+}

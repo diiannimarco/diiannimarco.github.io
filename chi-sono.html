@@ -3,35 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi Sono - Marco Diianni</title>
+    <title>Chi Sono - Marco Di Ianni</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <nav class="main-nav">
-        <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="chi-sono.html">Chi Sono</a></li>
-            <li><a href="studi.html">Studi</a></li>
-            <li><a href="insegnamento.html">Insegnamento</a></li>
-            <li><a href="visualizzazioni.html">Simulazioni</a></li>
-            <li><a href="articoli.html">Articoli</a></li>
-        </ul>
-    </nav>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1>Marco Di Ianni</h1>
+                <p class="subtitle">Fisico Computazionale</p>
+            </div>
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="chi-sono.html" class="active">Chi Sono</a></li>
+                    <li><a href="studi.html">Studi</a></li>
+                    <li><a href="insegnamento.html">Insegnamento</a></li>
+                    <li><a href="visualizzazioni.html">Simulazioni</a></li>
+                    <li><a href="articoli.html">Articoli</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <main>
-        <h1>Chi Sono</h1>
-        <p>Contenuto della pagina...</p>
+    <main class="container">
+        <article class="bio-page">
+            <div class="bio-header">
+                <img src="images/profilo.jpeg" alt="Marco Di Ianni" class="bio-image" width="200" height="200">
+                <div class="bio-title">
+                    <h1>Marco Di Ianni</h1>
+                    <p class="bio-subtitle">Fisico Computazionale, Insegnante, Sviluppatore</p>
+                </div>
+            </div>
+            
+            <section class="bio-section">
+                <h2><i class="fas fa-user-graduate"></i> Profilo Professionale</h2>
+                <p>Sono un fisico computazionale specializzato nella modellazione numerica di sistemi fisici complessi. Combino la rigorosità del metodo scientifico con le più moderne tecniche di programmazione per sviluppare simulazioni interattive che facilitano la comprensione dei fenomeni fisici.</p>
+                
+                <div class="bio-highlights">
+                    <div class="highlight">
+                        <i class="fas fa-brain"></i>
+                        <h3>Approccio Scientifico</h3>
+                        <p>Applicazione del metodo scientifico allo sviluppo software e all'analisi dati</p>
+                    </div>
+                    <div class="highlight">
+                        <i class="fas fa-code"></i>
+                        <h3>Sviluppo Software</h3>
+                        <p>Competenze avanzate in Python, JavaScript, C# e tecnologie web moderne</p>
+                    </div>
+                    <div class="highlight">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h3>Didattica Innovativa</h3>
+                        <p>Metodi di insegnamento basati su simulazioni interattive e apprendimento esperienziale</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="bio-section">
+                <h2><i class="fas fa-tools"></i> Competenze Tecniche</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Linguaggi di Programmazione</h3>
+                        <ul class="skill-list">
+                            <li>Python (Pandas, NumPy, Matplotlib, SciPy)</li>
+                            <li>JavaScript/TypeScript (ES6+)</li>
+                            <li>C# / .NET</li>
+                            <li>HTML5, CSS3 (Grid, Flexbox)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Fisica Computazionale</h3>
+                        <ul class="skill-list">
+                            <li>Metodi numerici (Runge-Kutta, Verlet)</li>
+                            <li>Simulazioni Monte Carlo</li>
+                            <li>Dinamica dei fluidi computazionale (CFD)</li>
+                            <li>Analisi di dati sperimentali</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Machine Learning & Data Science</h3>
+                        <ul class="skill-list">
+                            <li>TensorFlow / PyTorch</li>
+                            <li>Regressione e classificazione</li>
+                            <li>Analisi statistica</li>
+                            <li>Visualizzazione scientifica</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="bio-section">
+                <h2><i class="fas fa-rocket"></i> Interessi di Ricerca</h2>
+                <div class="research-interests">
+                    <div class="interest-card">
+                        <h3>Sistemi Dinamici Complessi</h3>
+                        <p>Studio del caos deterministico, attrattori strani e comportamento emergente in sistemi fisici.</p>
+                    </div>
+                    <div class="interest-card">
+                        <h3>Fisica Computazionale Educativa</h3>
+                        <p>Sviluppo di strumenti didattici interattivi per l'insegnamento della fisica attraverso la simulazione.</p>
+                    </div>
+                    <div class="interest-card">
+                        <h3>Modellazione Numerica di Fenomeni Fisici</h3>
+                        <p>Implementazione efficiente di algoritmi per la risoluzione numerica di equazioni differenziali.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="bio-section contact-section">
+                <h2><i class="fas fa-envelope"></i> Contatti</h2>
+                <p>Per collaborazioni, progetti di ricerca o opportunità di insegnamento:</p>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:marco.diianni@example.com">marco.diianni@example.com</a></p>
+                    <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/diiannimarco">@diiannimarco</a></p>
+                    <p><i class="fas fa-globe"></i> Sito: <a href="https://diiannimarco.github.io">diiannimarco.github.io</a></p>
+                </div>
+            </section>
+        </article>
     </main>
 
     <footer class="main-footer">
-        <div class="social-links">
-            <a href="https://github.com/diiannimarco">GitHub</a>
-            <a href="#">LinkedIn</a>
-            <a href="mailto:email@esempio.com">Email</a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigazione</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="chi-sono.html">Chi Sono</a></li>
+                        <li><a href="visualizzazioni.html">Simulazioni</a></li>
+                        <li><a href="articoli.html">Articoli</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>QR Code Pagina</h3>
+                    <div class="qr-code">
+                        <!-- QR code sarà generato dinamicamente -->
+                        <i class="fas fa-qrcode" style="font-size: 48px; color: #666;"></i>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Condividi</h3>
+                    <div class="social-share">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Marco Di Ianni. Tutti i diritti riservati.</p>
+                <p>Sviluppato con passione per la scienza e l'insegnamento</p>
+            </div>
         </div>
-        <p>© 2024 Marco Diianni</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="main.js" defer></script>
 </body>
 </html>

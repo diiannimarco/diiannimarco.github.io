@@ -1,1 +1,343 @@
-x
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insegnamento e Didattica - Marco Di Ianni</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1>Marco Di Ianni</h1>
+                <p class="subtitle">Fisico Computazionale</p>
+            </div>
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="chi-sono.html">Chi Sono</a></li>
+                    <li><a href="studi.html">Studi</a></li>
+                    <li><a href="insegnamento.html" class="active">Insegnamento</a></li>
+                    <li><a href="visualizzazioni.html">Simulazioni</a></li>
+                    <li><a href="articoli.html">Articoli</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="teaching-page">
+            <header class="page-header">
+                <h1>Didattica Innovativa della Fisica</h1>
+                <p class="page-subtitle">Metodologie, strumenti interattivi e approccio sperimentale all'insegnamento</p>
+            </header>
+
+            <section class="philosophy-section">
+                <h2><i class="fas fa-brain"></i> Filosofia Didattica</h2>
+                <div class="philosophy-grid">
+                    <div class="philosophy-card">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-hand-pointer"></i>
+                        </div>
+                        <h3>Apprendimento Esperienziale</h3>
+                        <p>La fisica si comprende meglio facendo, sperimentando e manipolando variabili in tempo reale.</p>
+                    </div>
+                    
+                    <div class="philosophy-card">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Integrazione Digitale</h3>
+                        <p>Utilizzo di simulazioni interattive per visualizzare concetti astratti e fenomeni complessi.</p>
+                    </div>
+                    
+                    <div class="philosophy-card">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Dati in Primo Piano</h3>
+                        <p>Insegnamento basato sull'analisi di dati reali e simulati per sviluppare pensiero critico.</p>
+                    </div>
+                    
+                    <div class="philosophy-card">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Collaborazione Attiva</h3>
+                        <p>Ambienti di apprendimento collaborativo dove gli studenti costruiscono insieme conoscenza.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="methodology-section">
+                <h2><i class="fas fa-tasks"></i> Metodologie Didattiche</h2>
+                
+                <div class="methodology-accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <h3>Flipped Classroom</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Gli studenti studiano la teoria a casa attraverso video lezioni e materiali interattivi, mentre il tempo in classe è dedicato ad attività pratiche, simulazioni e problem solving.</p>
+                            <div class="accordion-example">
+                                <h4>Esempio: Oscillazioni Armoniche</h4>
+                                <ul>
+                                    <li><strong>Casa:</strong> Video sulla teoria delle oscillazioni + simulazione base</li>
+                                    <li><strong>Classe:</strong> Analisi dati di pendoli reali, confronto con modelli teorici, esplorazione di casi non lineari</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <h3>Inquiry-Based Learning</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Gli studenti formulano domande, progettano esperimenti virtuali, raccolgono e analizzano dati per costruire autonomamente la comprensione dei concetti fisici.</p>
+                            <div class="accordion-example">
+                                <h4>Esempio: Circuiti RLC</h4>
+                                <ul>
+                                    <li><strong>Domanda:</strong> Come cambia il comportamento del circuito al variare di R, L e C?</li>
+                                    <li><strong>Attività:</strong> Simulatore interattivo per esplorare parametri, raccolta dati, identificazione di regolarità</li>
+                                    <li><strong>Conclusione:</strong> Formulazione della relazione tra frequenza di risonanza e parametri del circuito</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <h3>Project-Based Learning</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Apprendimento attraverso progetti significativi che richiedono l'applicazione integrata di conoscenze fisiche, matematiche e informatiche.</p>
+                            <div class="accordion-example">
+                                <h4>Progetto: Simulatore di Sistema Solare</h4>
+                                <ul>
+                                    <li><strong>Obiettivo:</strong> Creare un simulatore che riproduca il moto dei pianeti</li>
+                                    <li><strong>Competenze:</strong> Leggi di Newton, gravitazione universale, integrazione numerica, programmazione</li>
+                                    <li><strong>Prodotto finale:</strong> Applicazione web interattiva con visualizzazione 2D/3D</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tools-section">
+                <h2><i class="fas fa-toolbox"></i> Strumenti Didattici Digitali</h2>
+                
+                <div class="tools-showcase">
+                    <div class="tool-card">
+                        <div class="tool-preview">
+                            <div class="simulation-miniature" id="pendulum-mini">
+                                <!-- Mini simulazione pendolo -->
+                            </div>
+                        </div>
+                        <div class="tool-info">
+                            <h3>Simulazioni Interattive</h3>
+                            <p>Applicazioni web che permettono di manipolare parametri fisici e osservare gli effetti in tempo reale.</p>
+                            <ul class="tool-features">
+                                <li>Visualizzazione immediata delle relazioni tra variabili</li>
+                                <li>Esplorazione di condizioni non realizzabili in laboratorio</li>
+                                <li>Raccolta e analisi dati integrata</li>
+                            </ul>
+                            <a href="visualizzazioni.html" class="btn btn-primary">Esplora Simulazioni</a>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-preview">
+                            <div class="data-visualization-mini">
+                                <i class="fas fa-chart-bar" style="font-size: 48px; color: var(--primary-color);"></i>
+                            </div>
+                        </div>
+                        <div class="tool-info">
+                            <h3>Visualizzazione Scientifica</h3>
+                            <p>Strumenti per trasformare dati e equazioni in rappresentazioni grafiche comprensibili.</p>
+                            <ul class="tool-features">
+                                <li>Grafici dinamici che si aggiornano in tempo reale</li>
+                                <li>Rappresentazioni 3D di funzioni e campi vettoriali</li>
+                                <li>Animazioni di processi fisici</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-preview">
+                            <div class="assessment-mini">
+                                <i class="fas fa-check-circle" style="font-size: 48px; color: var(--secondary-color);"></i>
+                            </div>
+                        </div>
+                        <div class="tool-info">
+                            <h3>Valutazione Formativa Interattiva</h3>
+                            <p>Quiz e problemi che forniscono feedback immediato e guida personalizzata.</p>
+                            <ul class="tool-features">
+                                <li>Feedback contestuale basato sulle risposte</li>
+                                <li>Problemi aperti con più soluzioni possibili</li>
+                                <li>Tracciamento del progresso individuale</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="curriculum-section">
+                <h2><i class="fas fa-book-open"></i> Moduli Didattici Sviluppati</h2>
+                
+                <div class="modules-grid">
+                    <div class="module-card">
+                        <h3>Meccanica Classica Interattiva</h3>
+                        <div class="module-level">Livello: Universitario base</div>
+                        <ul class="module-topics">
+                            <li>Cinematica e dinamica con simulazioni</li>
+                            <li>Energia e conservazione</li>
+                            <li>Oscillazioni e onde</li>
+                            <li>Sistemi di particelle</li>
+                        </ul>
+                        <div class="module-duration">Durata: 40 ore</div>
+                    </div>
+                    
+                    <div class="module-card">
+                        <h3>Elettromagnetismo Computazionale</h3>
+                        <div class="module-level">Livello: Universitario avanzato</div>
+                        <ul class="module-topics">
+                            <li>Campi elettrici e magnetici visualizzati</li>
+                            <li>Circuiti RLC e risonanza</li>
+                            <li>Onde elettromagnetiche</li>
+                            <li>Simulazioni di propagazione</li>
+                        </ul>
+                        <div class="module-duration">Durata: 60 ore</div>
+                    </div>
+                    
+                    <div class="module-card">
+                        <h3>Introduzione alla Fisica Computazionale</h3>
+                        <div class="module-level">Livello: Triennale magistrale</div>
+                        <ul class="module-topics">
+                            <li>Metodi numerici per la fisica</li>
+                            <li>Simulazioni Monte Carlo</li>
+                            <li>Analisi dati con Python</li>
+                            <li>Progetti di modellazione</li>
+                        </ul>
+                        <div class="module-duration">Durata: 80 ore</div>
+                    </div>
+                    
+                    <div class="module-card">
+                        <h3>Fisica Moderna con Simulazioni</h3>
+                        <div class="module-level">Livello: Scuola superiore</div>
+                        <ul class="module-topics">
+                            <li>Relatività ristretta visualizzata</li>
+                            <li>Modelli atomici interattivi</li>
+                            <li>Fisica quantistica base</li>
+                            <li>Applicazioni tecnologiche</li>
+                        </ul>
+                        <div class="module-duration">Durata: 30 ore</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="resources-section">
+                <h2><i class="fas fa-download"></i> Risorse Didattiche Disponibili</h2>
+                
+                <div class="resources-list">
+                    <div class="resource-item">
+                        <div class="resource-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Video Lezioni</h3>
+                            <p>Collezione di video lezioni su concetti chiave della fisica, con spiegazioni chiare e dimostrazioni virtuali.</p>
+                            <a href="#" class="resource-link">Accedi alla playlist →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-icon">
+                            <i class="fas fa-file-code"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Script Python per Fisica</h3>
+                            <p>Codice open-source per analisi dati, simulazioni e visualizzazioni scientifiche.</p>
+                            <a href="#" class="resource-link">Scarica dal repository →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Schede Attività</h3>
+                            <p>Guide passo-passo per attività di laboratorio virtuale e progetti di investigazione.</p>
+                            <a href="#" class="resource-link">Scarica PDF →</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-teaching-section">
+                <h2><i class="fas fa-handshake"></i> Collaborazioni Didattiche</h2>
+                <p>Interessato a sviluppare materiali didattici innovativi o a implementare queste metodologie nella tua istituzione?</p>
+                <div class="contact-options">
+                    <a href="mailto:marco.diianni@example.com" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Contattami per Collaborazioni
+                    </a>
+                    <a href="visualizzazioni.html" class="btn btn-secondary">
+                        <i class="fas fa-atom"></i> Prova le Simulazioni
+                    </a>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigazione</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="insegnamento.html">Insegnamento</a></li>
+                        <li><a href="visualizzazioni.html">Simulazioni</a></li>
+                        <li><a href="articoli.html">Articoli</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>QR Code Pagina</h3>
+                    <div class="qr-code">
+                        <i class="fas fa-qrcode" style="font-size: 48px; color: #666;"></i>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Metodologie</h3>
+                    <ul class="footer-links">
+                        <li>Flipped Classroom</li>
+                        <li>Inquiry-Based Learning</li>
+                        <li>Project-Based Learning</li>
+                        <li>Simulazioni Interattive</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Marco Di Ianni. Tutti i diritti riservati.</p>
+                <p>Innovazione didattica per un apprendimento significativo della fisica</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js" defer></script>
+</body>
+</html>x
