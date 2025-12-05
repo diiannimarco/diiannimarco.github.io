@@ -1,25 +1,29 @@
-# Sito Profilo Personale
+# Marco Di Ianni - Sito Profilo Personale
 
-Sito web personale single-page per presentare:
+Sito web single-page che presenta:
 - Chi sono
-- Cosa ho studiato
-- Cosa insegno
+- Il mio percorso di studi
+- Le materie che insegno
 
-## Caratteristiche
-- Design responsive
-- HTML/CSS puro (senza JavaScript)
-- Ottimizzato per GitHub Pages
+🌐 **Visita il sito:** [https://diiannimarco.github.io](https://diiannimarco.github.io)
 
-## Indirizzo del sito
-https://diiannimarco.github.io
+## 🚀 Caratteristiche
+- ✅ Design responsive (ottimizzato per mobile)
+- ✅ Solo HTML5 e CSS3 (nessun JavaScript)
+- ✅ Caricamento ultra-veloce
+- ✅ QR code integrato
+- ✅ Hosting gratuito su GitHub Pages
 
-## QR Code
-Il sito include un QR code che punta direttamente al profilo online.
+## 📁 Struttura del progetto
+- `index.html` - Pagina principale con 3 sezioni
+- `style.css` - Stili e layout responsive
+- `README.md` - Questa documentazione
 
-## Modifiche
-Per aggiornare il sito, modificare i file:
-- `index.html` per il contenuto
-- `style.css` per lo stile
-
-## Licenza
-© 2024 Marco Di Ianni. Tutti i diritti riservati.
+## 🛠 Come modificare il sito
+1. Modifica `index.html` per aggiornare i contenuti
+2. Modifica `style.css` per cambiare lo stile
+3. Esegui questi comandi nel terminale:
+   ```bash
+   git add .
+   git commit -m "Descrizione delle modifiche"
+   git push origin main
